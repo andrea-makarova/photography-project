@@ -69,6 +69,7 @@ h2 {
    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 4fr));
     padding: 1%;
+    padding-bottom: 5%;
 }
 button {
     position: relative;
