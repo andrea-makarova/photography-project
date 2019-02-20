@@ -1,0 +1,121 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    color: white
+}
+
+/*header*/
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-size: 150%;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+/*images*/
+
+.header {
+    width: 100%;
+
+}
+
+.logo {
+    position: absolute;
+    width: 4%;
+    top: 3%;
+    left: 4%;
+}
+
+.container-photos img {
+    max-width: 90%;
+}
+
+
+
+
+/*navigation*/
+nav {
+    position: absolute;
+    right: 6%;
+    top: 3%;
+    z-index: 1;
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+/*article with photos representing categories*/
+h2 {
+    color: black;
+    text-align: center;
+    font-size: 100%;
+}
+
+.categories-photos div.container-photos {
+   display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 4fr));
+    padding: 1%;
+}
+button {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0%;
+}
+
+button:hover {opacity: 0.5;}
+.categories-text {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 150%;
+
+}
+
+/*footer*/
+footer {
+    font-size: 50%;
+    background-color: black;
+    position: absolute;
+
+    left: 0%;
+    width: 100%;
+    text-align: center;
+    padding-top: 8%;
+    padding-bottom: 1%;
+
+}
+
+/* Top left text */
+.contact {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    font-size: 120%;
+}
+
+/* Top right text */
+.follow {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    font-size: 120%;
+}
