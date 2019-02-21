@@ -197,6 +197,10 @@ main {
 
 }
 
+.hideMain {
+    display: none;
+}
+
 p.lensType {
     font-size: 90%;
 }
