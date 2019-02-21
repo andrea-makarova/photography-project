@@ -1,6 +1,6 @@
 * {
     font-family: 'Poppins', sans-serif;
-    color: white
+
 }
 
 /*header*/
@@ -11,11 +11,21 @@
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     font-size: 150%;
+    color: white;
 }
 
 .container {
     position: relative;
     text-align: center;
+}
+
+a.down {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
 }
 
 /*images*/
@@ -27,16 +37,26 @@
 
 .logo {
     position: absolute;
-    width: 4%;
-    top: 3%;
+    width: 30px;
+    left: 10%;
+}
+
+.negative {
+    position: fixed;
+    top: 1%;
     left: 4%;
+    z-index: 1;
 }
 
 .container-photos img {
     max-width: 90%;
+    padding-bottom: 5%;
+    padding-top: 5%;
 }
 
-
+.container a img {
+    width: 10%;
+}
 
 
 /*navigation*/
@@ -46,16 +66,44 @@ nav {
     top: 3%;
     z-index: 1;
     font-style: italic;
+    text-align: right;
+    width: 100%;
+}
+
+nav.negativeNav {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: white;
+    padding: 1%;
+
 }
 
 a {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
+    cursor: pointer;
+
+
+}
+
+nav.negativeNav a {
+    color: black;
+
+
 }
 
 a:hover {
     opacity: 0.5;
+    transition: 1s;
+}
+
+nav a {
+    padding: 3%;
+    font-size: 80%;
+    width: 100%;
+
 }
 
 /*article with photos representing categories*/
@@ -65,21 +113,29 @@ h2 {
     font-size: 100%;
 }
 
-.categories-photos div.container-photos {
-   display: grid;
+#categories-photos div.container-photos {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 4fr));
     padding: 1%;
-    padding-bottom: 5%;
+    padding-bottom: 0%;
 }
-button {
+
+.container-photos a {
     position: relative;
     text-align: center;
     cursor: pointer;
     border: none;
-    box-shadow: 0%;
+    box-shadow: 0;
+    background: none;
+
 }
 
-button:hover {opacity: 0.5;}
+.container-photos a:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+    transition: 1s;
+}
+
 .categories-text {
     position: absolute;
     bottom: 5%;
@@ -96,7 +152,7 @@ footer {
     font-size: 50%;
     background-color: black;
     position: absolute;
-
+    color: white;
     left: 0%;
     width: 100%;
     text-align: center;
@@ -119,4 +175,140 @@ footer {
     top: 15%;
     right: 5%;
     font-size: 120%;
+}
+
+/*template*/
+
+article {
+    color: black;
+    margin-top: 5%;
+
+    text-align: center;
+
+}
+
+main {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    padding: 1%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+}
+
+p.lensType {
+    font-size: 90%;
+}
+
+h2.name {
+    font-size: 110%;
+}
+
+h3 {
+    font-size: 100%;
+    text-transform: uppercase;
+}
+
+button {
+    background-color: #067684;
+    border: none;
+    color: white;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 80%;
+    cursor: pointer;
+}
+
+img.image {
+    width: 70%;
+}
+
+button:hover {
+    background-color: #be5429;
+    transition: 1s;
+
+}
+
+/*modal*/
+.modal-content {
+    background-color: white;
+    color: black;
+    width: 80%;
+    height: auto;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 0%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+
+}
+
+.modal-content p {
+    font-size: 70%;
+}
+
+.modal-button {
+    position: fixed;
+    color: black;
+    right: 0%;
+    top: 0.1%;
+    border: none;
+    font-size: 150%;
+    cursor: pointer;
+    background: none;
+    z-index: 1;
+}
+
+.modal-button:hover {
+    color: white;
+    position: fixed;
+
+}
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(1, 1, 1, 0.8);
+    z-index: 1;
+}
+
+.modal-image {
+    max-width: 60%;
+}
+
+.hide {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .modal-content {
+        display: grid;
+        grid-gap: 2em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "image-area text-area";
+        padding-top: 5%;
+    }
+
+    .container1 {
+        grid-area: text-area;
+    }
+
+    .modal-image {
+        grid-area: image-area;
+        max-width: 90%;
+        position: fixed;
+    top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
 }
