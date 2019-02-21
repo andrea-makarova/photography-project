@@ -1,48 +1,63 @@
-const btnPortrait = document.querySelector("#portrait");
 const template = document.querySelector("template").content;
-const main = document.querySelector("main");
-const nav = document.querySelector("nav");
+let main1 = document.querySelector("main#portrait");
+let main2 = document.querySelector("section#macro");
+let main3 = document.querySelector("main#wildLife");
+let main4 = document.querySelector("main#landscape");
 const productlistLink = "https://spreadsheets.google.com/feeds/list/1piIN2__3Ry5ywIrluwMNSXQYyrN36hGrG_yJI_hF-qQ/od6/public/values?alt=json";
-const allLink = document.querySelector("#all");
+const modal = document.querySelector(".modal-background");
+const close = document.querySelector(".modal-button");
 
-btnPortrait.addEventListener("click", portrait);
+close.addEventListener("click", () => modal.classList.add("hide"));
 
-all.addEventListener("click", () => showCategory("all"));
-
-function portrait() {
-  window.location = "portrait.html";
-}
-fetch(productlistLink).then(e => e.json()).then(data => data.feed.entry.createCatSections(data));
-
-function createCatSections(categories) {
-    console.log(categories);
-    categories.forEach(cat => {
-        const newSection = document.createElement("section");
-        const newHeader = document.createElement("h1");
-        const newA = document.createElement("a");
-        newSection.id = cat;
-        newA.textContent = cat;
-        newA.href = "#";
-        newA.addEventListener("click", () => showCategory(cat));
-        nav.appendChild(newA);
-        newHeader.textContent = cat;
-        main.appendChild(newHeader);
-        main.appendChild(newSection);
-    })
-    fetch(productlistLink).then(e => e.json()).then(data => data.forEach(showData));
-}
-
-function showCategory(category) {
-    console.log(category);
-    document.querySelectorAll("main section").forEach(section => {
-        if (section.id == category || category == "all") {
-            section.style.display = "grid";
-            section.previousElementSibling.style.display = "block";
-        } else {
-            section.style.display = "none";
-            section.previousElementSibling.style.display = "none";
-        }
+fetch(productlistLink).then(e => e.json()).then(data => data.feed.entry.forEach(showProduct));
 
 
-    })
+function showProduct(product) {
+    console.log(product)
+    let clone = template.cloneNode(true);
+    clone.querySelector("h2.name").textContent = product.gsx$name.$t;
+    clone.querySelector("h3.brand").textContent = product.gsx$brand.$t;
+    clone.querySelector("h3.price").textContent = product.gsx$price.$t;
+
+    clone.querySelector("p.lensType").textContent = product.gsx$lenstype.$t;
+
+    clone.querySelector("img.image").src = "products/small/" + product.gsx$image.$t;
+
+    clone.querySelector("button").addEventListener("click", () => {
+        fetch(productlistLink).then(e => e.json()).then(data => data.feed.entry.forEach(showDetails));
+    });
+
+    //    if (product.gsx$category.$t == "portrait") {
+    //        main1.appendChild(clone);
+    //    }
+    //    if (product.gsx$category.$t == "macro") {
+    //        main2.appendChild(clone);
+    //    }
+    //    if (product.gsx$category.$t == "wildlife") {
+    //        main3.appendChild(clone);
+    //    }
+    //    if (product.gsx$category.$t == "landscape") {
+    //        main4.appendChild(clone);
+    //    }
+    if (product.gsx$category.$t == "portrait") {
+        main1.appendChild(clone)
+    }
+
+
+
+};
+
+
+function showDetails(data) {
+    console.log(data);
+    modal.querySelector("img.modal-image").src = "products/small/" + data.gsx$image.$t;
+    modal.querySelector(" h2.modal-name").textContent = data.gsx$name.$t;
+    modal.querySelector(" h3.modal-brand").textContent = data.gsx$brand.$t;
+    modal.querySelector(" p.modal-lensType").textContent = data.gsx$lenstype.$t;
+    modal.querySelector(" p.modal-chip").textContent = data.gsx$chip.$t;
+    modal.querySelector(" p.modal-bayonet").textContent = data.gsx$bayonet.$t;
+    modal.querySelector(" p.modal-longDescription").textContent = data.gsx$longdescription.$t;
+    modal.querySelector(" h3.modal-price").textContent = data.gsx$price.$t;
+
+    modal.classList.remove('hide');
 }

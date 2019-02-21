@@ -5,40 +5,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <meta name="menu" content="menu">
+    <meta name="index" content="index">
     <title>index</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
 </head>
 <header>
-    <nav><a href="#" id="all">All</a></nav>
+    <nav><a>portrait</a>
+    <a>macro</a>
+    <a>wild life</a>
+    <a>landscape</a>
+    <img class="logo" src="logo-negative.png" alt="logo"></nav>
     <div class="container">
-        <img class="header" src=head.png alt="header">
+        <img class="header" src="head.png" alt="header">
         <div class="header-text">lenses for everybody</div>
+        <a class="down" href="#categories-photos"><img src="arrow.png" alt="arrow"></a>
     </div>
-    <img class="logo" src="logo-negative.png" alt="losgo">
+
 </header>
 
 <body>
-    <div class="categories-photos">
+    <div id="categories-photos">
         <h2>FIND THE RIGHT LENS FOR YOUR CAMERA!</h2>
         <div class="container-photos">
-            <button>
+            <a href="portrait.html" >
                 <img src="portrait.png" alt="portrait category">
                 <div class="categories-text">portrait</div>
-            </button>
-              <button>
+            </a>
+              <a >
                 <img src="macro.png" alt="macro category">
                 <div class="categories-text">macro</div>
-            </button>
-              <button>
+            </a>
+              <a >
                 <img src="wild-life.png" alt="wild-life category">
                 <div class="categories-text">wild life</div>
-            </button>
-              <button>
+            </a>
+              <a >
                 <img src="landscape.png" alt="landscape category">
                 <div class="categories-text">landscape</div>
-            </button>
+            </a>
         </div>
     </div>
 
@@ -56,11 +61,11 @@
     </div>
 
     <footer>
-        <a class="contact" href="mailto:andreamakarova99@gmail.com">contact us</a>
-        <a class="follow" href="">follow us</a>
+        <a class="contact" href="mailto:andreamakarova99@gmail.com" target="_blank">contact us</a>
+        <a class="follow" href="https://www.facebook.com" target="_blank">follow us</a>
         <p>Copyright © 2015-2019 Camera Lens shop, All rights reserved</p>
     </footer>
-    <script src="javascript.js"></script>
+
 </body>
 
 </html>
