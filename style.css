@@ -24,9 +24,8 @@ a.down {
     bottom: 2%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-
 }
+
 
 /*images*/
 
@@ -213,6 +212,7 @@ p.lensType {
 
 h2.name {
     font-size: 110%;
+    line-height: 130%;
 }
 
 h3 {
@@ -272,6 +272,7 @@ button:hover {
 
 .modal-name {
     text-align: left;
+    line-height: 120%;
 }
 
 .modal-content h3 {
