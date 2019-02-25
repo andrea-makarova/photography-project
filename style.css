@@ -121,9 +121,11 @@ a#selected {
 
 
 /* article with photos representing categories */
-h2 {
+.title-question {
     color: black;
-
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 div.container-photos {
@@ -209,9 +211,8 @@ footer {
 article {
     color: black;
     margin-top: 5%;
-
+    text-align: center;
 }
-
 
 
 main {
@@ -257,6 +258,9 @@ button:hover {
     transition: 1s;
 }
 
+img.image {
+    width: 70%;
+}
 
 /* modal */
 .modal-content {
@@ -361,6 +365,12 @@ button:hover {
 @media (max-width: 700px) {
     .header-text {
         font-size: 100%;
+    }
+
+    .title-question {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
