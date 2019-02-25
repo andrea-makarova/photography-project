@@ -12,20 +12,27 @@
 </head>
 <header>
     <nav id="menu" class="negativeNav">
-             <a href="portrait.html">portrait</a>
-        <a id="selected" href="macro.html">macro</a>
+        <a href="portrait.html">portrait</a>
+        <a class="selected" href="macro.html">macro</a>
         <a href="wild-life.html">wild life</a>
         <a href="landscape.html">landscape</a>
         <a href="index.html"><img class="logo negative" src="logo-positive.png" alt="logo"></a></nav>
 
-        <nav id="filters">
-    <p>BRAND</p></nav>
+    <button class="filter">BRAND</button>
+
+    <div class="hide filter-content">
+        <button class="filter-button">✕</button>
+        <a href="#canon">Canon</a>
+        <a href="#sony">Sony</a>
+        <a href="#nikon">Nikon</a>
+        <a href="#sigma">Sigma</a>
+    </div>
 
 </header>
 
 <body>
 
-     <main class="hideMain" id="portrait"></main>
+    <main class="hideMain" id="portrait"></main>
     <main id="macro"></main>
     <main class="hideMain" id="wildLife"></main>
     <main class="hideMain" id="landscape"></main>
@@ -68,8 +75,11 @@
         <p>Copyright © 2015-2019 Camera Lens shop, All rights reserved</p>
     </footer>
     <script src="javascript.js">
-    if (product.gsx$category.$t == "macro") {
-    main.appendChild(clone)}</script>
+        if (product.gsx$category.$t == "macro") {
+            main.appendChild(clone)
+        }
+
+    </script>
 </body>
 
 </html>
