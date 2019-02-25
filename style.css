@@ -1,17 +1,30 @@
-* {
-    font-family: 'Poppins', sans-serif;
-
+html, body {
+    font-family: 'Poppins';
+    margin: 0;
 }
 
-/*header*/
+
+
+/* header */
 .header-text {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
-    font-size: 150%;
+    font-size: 250%;
     color: white;
+    font-weight: 300;
+    width: 100%;
+}
+
+.header-text1 {
+    position: absolute;
+    color: white;
+    font-weight: 700;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -21,17 +34,16 @@
 
 a.down {
     position: absolute;
-    bottom: 2%;
+    bottom: 1px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 
-/*images*/
 
+/* images */
 .header {
     width: 100%;
-
 }
 
 .logo {
@@ -58,7 +70,7 @@ a.down {
 }
 
 
-/*navigation*/
+/* navigation */
 nav {
     position: absolute;
     right: 6%;
@@ -90,8 +102,6 @@ a {
 
 nav.negativeNav a {
     color: black;
-
-
 }
 
 a:hover {
@@ -100,7 +110,7 @@ a:hover {
 }
 
 nav a {
-    padding: 3%;
+    padding: 2%;
     font-size: 80%;
     width: 100%;
 }
@@ -109,18 +119,18 @@ a#selected {
     color: #be5429;
 }
 
-/*article with photos representing categories*/
+
+/* article with photos representing categories */
 h2 {
     color: black;
 
-    font-size: 100%;
 }
 
-#categories-photos div.container-photos {
+div.container-photos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 4fr));
-    padding: 1%;
-    padding-bottom: 0%;
+    padding-left: 4%;
+    padding-right: 4%;
 }
 
 .container-photos a {
@@ -128,9 +138,7 @@ h2 {
     text-align: center;
     cursor: pointer;
     border: none;
-    box-shadow: 0;
     background: none;
-
 }
 
 .container-photos a:hover {
@@ -146,60 +154,73 @@ h2 {
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     font-style: italic;
-    font-size: 150%;
-
+    font-size: 170%;
+    font-weight: 700;
 }
 
-/*footer*/
+
+/* footer */
 footer {
-    font-size: 50%;
     background-color: black;
-    position: absolute;
     color: white;
-    left: 0%;
-    width: 100%;
-    text-align: center;
-    padding-top: 8%;
-    padding-bottom: 1%;
 
+    /* grid for the footer */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "contact about join follow"
+        ". copyright copyright .";
 }
 
-/* Top left text */
 .contact {
-    position: absolute;
-    top: 15%;
-    left: 5%;
-    font-size: 120%;
+    grid-area: contact;
 }
 
-/* Top right text */
+.about {
+    grid-area: about;
+}
+
+.join {
+    grid-area: join;
+}
+
 .follow {
-    position: absolute;
-    top: 15%;
-    right: 5%;
-    font-size: 120%;
+    grid-area: follow;
 }
 
-/*template*/
+.copyright {
+    grid-area: copyright;
+    font-size: 11px;
+    text-align: center;
+}
 
+.footer-title {
+    font-size: 14px;
+    text-align: center;
+}
+
+.sub-text {
+    font-size: 10px;
+    text-align: center;
+}
+
+
+/* template */
 article {
     color: black;
     margin-top: 5%;
-    padding: 2%;
-    line-height: 80%;
-    text-align: center;
+
 }
 
 
 
 main {
     display: grid;
-    grid-gap: 2em;
+    grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
     padding: 1%;
     padding-top: 5%;
     padding-bottom: 5%;
-
 }
 
 .hideMain {
@@ -231,17 +252,13 @@ button {
     cursor: pointer;
 }
 
-img.image {
-    width: 70%;
-}
-
 button:hover {
     background-color: #be5429;
     transition: 1s;
-
 }
 
-/*modal*/
+
+/* modal */
 .modal-content {
     background-color: white;
     color: black;
@@ -256,7 +273,6 @@ button:hover {
     padding-bottom: 5%;
     padding-right: 5%;
     padding-left: 5%;
-
 
 }
 
@@ -294,7 +310,6 @@ button:hover {
 .modal-button:hover {
     color: white;
     position: fixed;
-
 }
 
 .modal-background {
@@ -316,6 +331,8 @@ button:hover {
     display: none;
 }
 
+
+/* media query */
 @media (min-width: 600px) {
     .modal-content {
         display: grid;
@@ -338,4 +355,12 @@ button:hover {
         transform: translate(-50%, -50%);
         z-index: 1;
     }
+
 }
+
+@media (max-width: 700px) {
+    .header-text {
+        font-size: 100%;
+    }
+}
+
