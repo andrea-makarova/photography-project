@@ -94,7 +94,10 @@ a {
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+
 }
+
+
 
 nav.negativeNav a {
     color: black;
@@ -109,16 +112,17 @@ nav a {
     padding: 2%;
     font-size: 80%;
     width: 100%;
+}
 
+a#selected {
+    color: #be5429;
 }
 
 
 /* article with photos representing categories */
 h2 {
     color: black;
-    text-align: center;
-    font-size: 130%;
-    font-weight: 600;
+
 }
 
 div.container-photos {
@@ -204,12 +208,10 @@ footer {
 article {
     color: black;
     margin-top: 5%;
-    text-align: center;
+
 }
 
-img.image {
-    width: 60%;
-}
+
 
 main {
     display: grid;
@@ -269,10 +271,25 @@ button:hover {
     padding-bottom: 5%;
     padding-right: 5%;
     padding-left: 5%;
+
 }
 
+.modal-longDescription {
+    line-height: 130%;
+}
 .modal-content p {
     font-size: 70%;
+    text-align: left;
+
+
+}
+
+.modal-name {
+    text-align: left;
+}
+
+.modal-content h3 {
+    text-align: left
 }
 
 .modal-button {
@@ -304,6 +321,7 @@ button:hover {
 
 .modal-image {
     max-width: 60%;
+
 }
 
 .hide {
@@ -329,7 +347,7 @@ button:hover {
         grid-area: image-area;
         max-width: 90%;
         position: fixed;
-    top: 50%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
