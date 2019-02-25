@@ -71,7 +71,7 @@ a.down {
 
 
 /* navigation */
-nav {
+nav#menu {
     position: absolute;
     right: 6%;
     top: 3%;
@@ -81,7 +81,7 @@ nav {
     width: 100%;
 }
 
-nav.negativeNav {
+nav#menu.negativeNav {
     position: fixed;
     top: 0%;
     left: 0%;
@@ -100,7 +100,7 @@ a {
 
 
 
-nav.negativeNav a {
+nav#menu.negativeNav a {
     color: black;
 }
 
@@ -109,7 +109,7 @@ a:hover {
     transition: 1s;
 }
 
-nav a {
+nav#menu a {
     padding: 2%;
     font-size: 80%;
     width: 100%;
