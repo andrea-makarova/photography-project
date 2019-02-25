@@ -1,9 +1,8 @@
-html, body {
+html,
+body {
     font-family: 'Poppins';
     margin: 0;
 }
-
-
 
 /* header */
 .header-text {
@@ -70,7 +69,7 @@ a.down {
 }
 
 
-/* navigation */
+/* navigation - #menu */
 nav#menu {
     position: absolute;
     right: 6%;
@@ -115,9 +114,10 @@ nav#menu a {
     width: 100%;
 }
 
-a#selected {
+nav#menu a.selected {
     color: #be5429;
 }
+
 
 
 /* article with photos representing categories */
@@ -206,11 +206,54 @@ footer {
     text-align: center;
 }
 
+/*filter*/
+
+button.filter {
+    position: fixed;
+    left: 10%;
+    top: 0.5%;
+    z-index: 1;
+    font-style: italic;
+    background: none;
+    color: gray;
+}
+
+button.filter:hover {
+    opacity: 0.5;
+    background: none;
+}
+.filter-content {
+  width: 100%;
+
+    position: fixed;
+    background-color: white;
+    top: 2%;
+    padding-left: 4%;
+    padding-top: 5%;
+    padding-bottom: 1%;
+}
+.filter-content a {
+    color: gray;
+    font-size: 70%;
+ padding-left: 2%;
+   padding-right: 2%;
+}
+
+.filter-button {
+    background: none;
+    color: gray;
+    transform: translateX(-20%);
+}
+
+.filter-button:hover {
+    background: none;
+    opacity: 0.5;
+}
 
 /* template */
 article {
     color: black;
-    margin-top: 5%;
+    margin-top: 15%;
     text-align: center;
 }
 
@@ -277,12 +320,24 @@ img.image {
     padding-bottom: 5%;
     padding-right: 5%;
     padding-left: 5%;
+    animation: fadeIn 2s forwards;
 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .modal-longDescription {
     line-height: 130%;
 }
+
 .modal-content p {
     font-size: 70%;
     text-align: left;
@@ -336,6 +391,7 @@ img.image {
 }
 
 
+
 /* media query */
 @media (min-width: 600px) {
     .modal-content {
@@ -372,5 +428,5 @@ img.image {
         margin-left: 10px;
         margin-right: 10px;
     }
-}
 
+}
