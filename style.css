@@ -118,6 +118,44 @@ nav#menu a.selected {
     color: #be5429;
 }
 
+/* NAVIGATION */
+/* home page */
+nav {
+    position: absolute;
+    top: 2%;
+    z-index: 1;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: right;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+nav a {
+    padding: 15px;
+    font-size: 80%;
+    width: 100%;
+}
+
+a:hover {
+    opacity: 0.5;
+    transition: 1s;
+}
+
+.logo {
+    position: absolute;
+    width: 30px;
+    left: 5%;
+}
+
+
 /* OVERLAY MENU */
 .overlay {
   height: 100%;
@@ -170,6 +208,8 @@ nav#menu a.selected {
     text-align: center;
     font-size: 30px;
     font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 div.container-photos {

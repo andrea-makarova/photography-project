@@ -1,3 +1,13 @@
+// Open and Close Burger menu //
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+
 const template = document.querySelector("template").content;
 let main1 = document.querySelector("main#portrait");
 
