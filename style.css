@@ -185,7 +185,7 @@ a:hover {
 .overlay a {
     padding: 9px;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 17px;
     font-weight: 600;
     color: white;
     display: block;
@@ -201,11 +201,12 @@ a:hover {
     position: absolute;
     top: 20px;
     right: 35px;
-    font-size: 40px;
+    font-size: 30px;
+    font-style: normal;
 }
 
 .burgermenu {
-    width: 30px;
+    width: 27px;
     float: right;
     padding-right: 25px;
     display: none;
