@@ -118,6 +118,88 @@ nav#menu a.selected {
     color: #be5429;
 }
 
+/* NAVIGATION */
+/* home page */
+nav {
+    position: absolute;
+    top: 2%;
+    z-index: 1;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: right;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+nav a {
+    padding: 15px;
+    font-size: 80%;
+    width: 100%;
+}
+
+a:hover {
+    opacity: 0.5;
+    transition: 1s;
+}
+
+.logo {
+    position: absolute;
+    width: 30px;
+    left: 5%;
+}
+
+
+/* OVERLAY MENU */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.overlay-content {
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
+
+.overlay a {
+  padding: 9px;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #c4c4c4;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 40px;
+}
+
+.burgermenu {
+    width: 30px;
+    float: right;
+    padding-right: 25px;
+    display: none;
+}
 
 
 /* article with photos representing categories */
@@ -126,6 +208,8 @@ nav#menu a.selected {
     text-align: center;
     font-size: 30px;
     font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 div.container-photos {
@@ -161,7 +245,7 @@ div.container-photos {
 }
 
 
-/* footer */
+/* FOOTER */
 footer {
     background-color: black;
     color: white;
@@ -192,18 +276,43 @@ footer {
 
 .copyright {
     grid-area: copyright;
-    font-size: 11px;
+    font-size: 10px;
     text-align: center;
+    font-style: italic;
+    margin: 0px;
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
 
 .footer-title {
     font-size: 14px;
     text-align: center;
+    margin: 0;
+    padding-top: 17px;
+    padding-bottom: 4px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: default;
 }
 
 .sub-text {
     font-size: 10px;
     text-align: center;
+    margin: 0;
+    padding-bottom: 3px;
+    cursor: default;
+}
+
+.sub-text1 {
+    font-size: 10px;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 3px;
+    cursor: default;
+}
+.sub-text1:hover {
+    opacity: 0.4;
+    transition: 1s;
 }
 
 /*filter*/
@@ -429,4 +538,43 @@ img.image {
         margin-right: 10px;
     }
 
+    footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "contact"
+            "about"
+            "join"
+            "follow"
+            "copyright";
+    }
+
+        .contact {
+            grid-area: contact;
+        }
+
+        .about {
+            grid-area: about;
+        }
+
+        .join {
+            grid-area: join;
+        }
+
+        .follow {
+            grid-area: follow;
+        }
+
+        .copyright {
+        grid-area: copyright;
+        }
+
+
+    .burgermenu {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+    }
 }
