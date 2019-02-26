@@ -5,13 +5,13 @@ body {
 }
 
 /* header */
-.header-text {
+.header-text2 {
     position: absolute;
-    top: 75%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
-    font-size: 250%;
+    font-size: 120%;
     color: white;
     font-weight: 300;
     width: 100%;
@@ -24,6 +24,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+
 }
 
 .container {
@@ -45,6 +46,13 @@ a.down {
     width: 100%;
 }
 
+.small {
+    display: block;
+}
+
+.big {
+    display: none;
+}
 .logo {
     position: absolute;
     width: 30px;
@@ -53,7 +61,6 @@ a.down {
 
 .negative {
     position: fixed;
-    top: 1%;
     left: 4%;
     z-index: 1;
 }
@@ -153,45 +160,48 @@ a:hover {
     position: absolute;
     width: 30px;
     left: 5%;
+
 }
 
 
 /* OVERLAY MENU */
 .overlay {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  background-color: black;
-  overflow-x: hidden;
-  transition: 0.5s;
-  z-index: 1;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0%;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1;
 }
 
 .overlay-content {
-  position: relative;
-  top: 100px;
-  text-align: center;
+    position: relative;
+    top: 100px;
+    text-align: center;
 }
 
 .overlay a {
-  padding: 9px;
-  text-decoration: none;
-  font-size: 28px;
-  font-weight: 600;
-  color: white;
-  display: block;
-  transition: 0.3s;
+    padding: 9px;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+    display: block;
+    transition: 0.3s;
 }
 
-.overlay a:hover, .overlay a:focus {
-  color: #c4c4c4;
+.overlay a:hover,
+.overlay a:focus {
+    color: #c4c4c4;
 }
 
 .overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  font-size: 40px;
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
 }
 
 .burgermenu {
@@ -310,6 +320,7 @@ footer {
     padding-bottom: 3px;
     cursor: default;
 }
+
 .sub-text1:hover {
     opacity: 0.4;
     transition: 1s;
@@ -331,8 +342,9 @@ button.filter:hover {
     opacity: 0.5;
     background: none;
 }
+
 .filter-content {
-  width: 100%;
+    width: 100%;
 
     position: fixed;
     background-color: white;
@@ -341,11 +353,12 @@ button.filter:hover {
     padding-top: 5%;
     padding-bottom: 1%;
 }
+
 .filter-content a {
     color: gray;
     font-size: 70%;
- padding-left: 2%;
-   padding-right: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .filter-button {
@@ -499,9 +512,74 @@ img.image {
     display: none;
 }
 
+.header-text {
+    font-size: 100%;
+}
+
+.title-question {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "contact"
+        "about"
+        "join"
+        "follow"
+        "copyright";
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.about {
+    grid-area: about;
+}
+
+.join {
+    grid-area: join;
+}
+
+.follow {
+    grid-area: follow;
+}
+
+.copyright {
+    grid-area: copyright;
+}
+
+
+.burgermenu {
+    display: block;
+}
+
+.navigation {
+    display: none;
+}
 
 
 /* media query */
+
+
+@media (min-width: 400px) {
+    .header-text2 {
+
+        top: 60%;
+}
+.small {
+    display: none;
+}
+
+.big {
+    display: block;
+}
+}
+
 @media (min-width: 600px) {
     .modal-content {
         display: grid;
@@ -524,57 +602,27 @@ img.image {
         transform: translate(-50%, -50%);
         z-index: 1;
     }
+      .header-text2 {
+   font-size: 160%;
+        top: 70%;
+}
 
 }
 
-@media (max-width: 700px) {
-    .header-text {
-        font-size: 100%;
-    }
+@media (min-width: 800px) {
 
-    .title-question {
-        font-size: 20px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
+  .header-text2 {
+   font-size: 200%;
+        top: 68%;
+}
 
-    footer {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "contact"
-            "about"
-            "join"
-            "follow"
-            "copyright";
-    }
+}
 
-        .contact {
-            grid-area: contact;
-        }
+@media (min-width: 1000px) {
 
-        .about {
-            grid-area: about;
-        }
+  .header-text2 {
+   font-size: 250%;
+        top: 75%;
+}
 
-        .join {
-            grid-area: join;
-        }
-
-        .follow {
-            grid-area: follow;
-        }
-
-        .copyright {
-        grid-area: copyright;
-        }
-
-
-    .burgermenu {
-        display: block;
-    }
-
-    .navigation {
-        display: none;
-    }
 }

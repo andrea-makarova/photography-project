@@ -1,11 +1,4 @@
-// Open and Close Burger menu //
-function openNav() {
-  document.getElementById("myNav").style.width = "100%";
-}
 
-function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
-}
 
 
 const template = document.querySelector("template").content;
@@ -33,6 +26,15 @@ closeFilter.addEventListener("click", () => filter.classList.add("hide"));
 fetch(productlistLink).then(e => e.json()).then(data => data.feed.entry.forEach(showProduct));
 
 filterButton.addEventListener("click", () => filter.classList.remove("hide"));
+
+// Open and Close Burger menu //
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
 
 
 function showProduct(product) {
