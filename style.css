@@ -55,12 +55,15 @@ a.down {
 }
 .logo {
     position: absolute;
-    width: 30px;
-    left: 10%;
+    width: 110px;
+    left: 4%;
+    top: 0px;
+    margin: 0px;
 }
 
 .negative {
     position: fixed;
+    top: 10px;
     left: 4%;
     z-index: 1;
 }
@@ -80,7 +83,6 @@ a.down {
 nav#menu {
     position: absolute;
     right: 6%;
-    top: 3%;
     z-index: 1;
     font-style: italic;
     text-align: right;
@@ -91,9 +93,7 @@ nav#menu.negativeNav {
     position: fixed;
     top: 0%;
     left: 0%;
-    background-color: white;
-    padding: 1%;
-
+    padding-top: 20px;
 }
 
 a {
@@ -103,8 +103,6 @@ a {
     cursor: pointer;
 
 }
-
-
 
 nav#menu.negativeNav a {
     color: black;
@@ -129,7 +127,7 @@ nav#menu a.selected {
 /* home page */
 nav {
     position: absolute;
-    top: 2%;
+    top: 3%;
     z-index: 1;
     font-style: italic;
     font-weight: 700;
@@ -156,11 +154,9 @@ a:hover {
     transition: 1s;
 }
 
-.logo {
-    position: absolute;
-    width: 30px;
-    left: 5%;
-
+.navigation {
+    padding-top: 10px;
+    padding-right: 40px;
 }
 
 
@@ -185,7 +181,7 @@ a:hover {
 .overlay a {
     padding: 9px;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 17px;
     font-weight: 600;
     color: white;
     display: block;
@@ -201,14 +197,24 @@ a:hover {
     position: absolute;
     top: 20px;
     right: 35px;
-    font-size: 40px;
+    font-size: 30px;
+    font-style: normal;
 }
 
 .burgermenu {
-    width: 30px;
+    width: 27px;
     float: right;
     padding-right: 25px;
     display: none;
+    padding-top: 10px;
+}
+
+.burgermenu-portrait {
+    width: 27px;
+    float: right;
+    padding-right: 25px;
+    display: none;
+    padding-top: 5px;
 }
 
 
@@ -322,7 +328,7 @@ footer {
 }
 
 .sub-text1:hover {
-    opacity: 0.4;
+    color: #5bd3fa;
     transition: 1s;
 }
 
@@ -330,8 +336,8 @@ footer {
 
 button.filter {
     position: fixed;
-    left: 10%;
-    top: 0.5%;
+    left: 160px;
+    top: 20px;
     z-index: 1;
     font-style: italic;
     background: none;
@@ -408,7 +414,7 @@ h3 {
 }
 
 button {
-    background-color: #067684;
+    background-color: #5bd3fa;
     border: none;
     color: white;
     padding: 1%;
@@ -554,15 +560,6 @@ footer {
 }
 
 
-.burgermenu {
-    display: block;
-}
-
-.navigation {
-    display: none;
-}
-
-
 /* media query */
 
 
@@ -571,13 +568,30 @@ footer {
 
         top: 60%;
 }
-.small {
-    display: none;
-}
 
-.big {
-    display: block;
-}
+    .small {
+        display: none;
+    }
+
+    .big {
+        display: block;
+    }
+
+    .burgermenu {
+        display: block;
+    }
+
+    .burgermenu-portrait {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .navigation-portrait {
+        display: none;
+    }
 }
 
 @media (min-width: 600px) {
@@ -603,17 +617,44 @@ footer {
         z-index: 1;
     }
       .header-text2 {
-   font-size: 160%;
+        font-size: 160%;
         top: 70%;
 }
 
+    footer {
+    background-color: black;
+    color: white;
+
+    /* grid for the footer */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "contact about join follow"
+        ". copyright copyright .";
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.about {
+    grid-area: about;
+}
+
+.join {
+    grid-area: join;
+}
+
+.follow {
+    grid-area: follow;
+}
 }
 
 @media (min-width: 800px) {
 
   .header-text2 {
-   font-size: 200%;
-        top: 68%;
+    font-size: 200%;
+    top: 68%;
 }
 
 }
@@ -625,4 +666,20 @@ footer {
         top: 75%;
 }
 
+    .burgermenu {
+        display: none;
+    }
+
+    .burgermenu-portrait {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+    }
+
+    .navigation-portrait {
+        display: block;
+    }
 }
+
