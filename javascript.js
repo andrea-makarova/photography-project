@@ -10,6 +10,14 @@ let main3 = document.querySelector("main#wildLife");
 
 let main4 = document.querySelector("main#landscape");
 
+let main5 = document.querySelector("main#canon");
+
+let main6 = document.querySelector("main#sony");
+
+let main7 = document.querySelector("main#nikon");
+
+let main8 = document.querySelector("main#sigma");
+
 
 
 const productlistLink = "https://spreadsheets.google.com/feeds/list/1piIN2__3Ry5ywIrluwMNSXQYyrN36hGrG_yJI_hF-qQ/od6/public/values?alt=json";
@@ -24,6 +32,8 @@ closeModal.addEventListener("click", () => modal.classList.add("hide"));
 closeFilter.addEventListener("click", () => filter.classList.add("hide"));
 
 fetch(productlistLink).then(e => e.json()).then(data => data.feed.entry.forEach(showProduct));
+
+
 
 filterButton.addEventListener("click", () => filter.classList.remove("hide"));
 
@@ -68,8 +78,28 @@ function showProduct(product) {
         main4.appendChild(clone);
     }
 
+
 };
 
+fetch(productlistLink).then(e => e.json()).then(data => data.feed.entry.forEach(showBrand));
+
+function showBrand(brand) {
+     let clone = template.cloneNode(true);
+
+       if (brand.gsx$brand.$t == "Canon") {
+        main5.appendChild(clone);
+    }
+
+    if (brand.gsx$brand.$t == "Sony") {
+        main6.appendChild(clone);
+    }
+    if (brand.gsx$brand.$t == "Nikon") {
+        main7.appendChild(clone);
+    }
+    if (brand.gsx$category.$t == "Sigma") {
+        main8.appendChild(clone);
+    }
+}
 
 function showDetails(data) {
     console.log(data);
