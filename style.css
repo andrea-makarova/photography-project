@@ -588,6 +588,10 @@ footer {
     grid-area: copyright;
 }
 
+  .burgermenu {
+        display: block;
+      cursor: pointer;
+    }
 /* media query */
 
 
