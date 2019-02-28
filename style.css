@@ -592,6 +592,10 @@ footer {
         display: block;
       cursor: pointer;
     }
+
+ .filter-content {
+        top: 7%;
+    }
 /* media query */
 
 
@@ -718,11 +722,9 @@ footer {
     .navigation-portrait {
         display: block;
     }
-
-}
-
-@media (min-width: 1100px) {
-     .filter-content {
+ .filter-content {
         top: 2%;
     }
 }
+
+
