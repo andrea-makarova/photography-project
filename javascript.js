@@ -22,6 +22,8 @@ const sony = document.querySelector("a.sony");
 const nikon = document.querySelector("a.nikon");
 const sigma = document.querySelector("a.sigma");
 
+//hides element after click
+
 closeModal.addEventListener("click", () => modal.classList.add("hide"));
 
 closeFilter.addEventListener("click", () => filter.classList.add("hide"));
@@ -29,7 +31,7 @@ closeFilter.addEventListener("click", () => filter.classList.add("hide"));
 fetch(productlistLink).then(e => e.json()).then(data => data.feed.entry.forEach(showProduct));
 
 
-
+//shows element after click
 filterButton.addEventListener("click", () => filter.classList.remove("hide"));
 
 // Open and Close Burger menu //
@@ -84,6 +86,7 @@ function showProduct(product) {
 
 };
 
+// shows details of the products
 
 function showDetails(data) {
     console.log(data);
@@ -100,7 +103,7 @@ function showDetails(data) {
     modal.classList.remove('hide');
 };
 
-
+// shows only selected brand
 canon.addEventListener("click", () => {
     const allNonCanon = document.querySelectorAll("main article:not(.Canon)")
     allNonCanon.forEach(article=>{
