@@ -1,6 +1,3 @@
-
-
-
 const template = document.querySelector("template").content;
 let main1 = document.querySelector("main#portrait");
 
@@ -10,14 +7,6 @@ let main3 = document.querySelector("main#wildLife");
 
 let main4 = document.querySelector("main#landscape");
 
-let main5 = document.querySelector("main#canon");
-
-let main6 = document.querySelector("main#sony");
-
-let main7 = document.querySelector("main#nikon");
-
-let main8 = document.querySelector("main#sigma");
-
 
 
 const productlistLink = "https://spreadsheets.google.com/feeds/list/1piIN2__3Ry5ywIrluwMNSXQYyrN36hGrG_yJI_hF-qQ/od6/public/values?alt=json";
@@ -26,6 +15,12 @@ const filter = document.querySelector(".filter-content");
 const closeModal = document.querySelector(".modal-button");
 const closeFilter = document.querySelector(".filter-button");
 const filterButton = document.querySelector("button.filter");
+
+const article = document.querySelector("article");
+const canon = document.querySelector("a.canon");
+const sony = document.querySelector("a.sony");
+const nikon = document.querySelector("a.nikon");
+const sigma = document.querySelector("a.sigma");
 
 closeModal.addEventListener("click", () => modal.classList.add("hide"));
 
@@ -39,20 +34,29 @@ filterButton.addEventListener("click", () => filter.classList.remove("hide"));
 
 // Open and Close Burger menu //
 function openNav() {
-  document.getElementById("myNav").style.width = "100%";
+    document.getElementById("myNav").style.width = "100%";
+    filterButton.style.zIndex=0
 }
 
 function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
+    document.getElementById("myNav").style.width = "0%";
+    setTimeout(()=>{
+        filterButton.style.zIndex=1
+    }, 500)
+
 }
 
+//shows datas from spreadsheet in template
 
 function showProduct(product) {
     console.log(product)
     let clone = template.cloneNode(true);
 
+
     clone.querySelector("h2.name").textContent = product.gsx$name.$t;
     clone.querySelector("h3.brand").textContent = product.gsx$brand.$t;
+    clone.querySelector("article").classList.add(product.gsx$brand.$t);
+
     clone.querySelector("h3.price").textContent = product.gsx$price.$t;
 
     clone.querySelector("p.lensType").textContent = product.gsx$lenstype.$t;
@@ -62,7 +66,6 @@ function showProduct(product) {
     clone.querySelector("button").addEventListener("click", () => {
         showDetails(product)
     });
-
 
 
     if (product.gsx$category.$t == "portrait") {
@@ -81,25 +84,6 @@ function showProduct(product) {
 
 };
 
-fetch(productlistLink).then(e => e.json()).then(data => data.feed.entry.forEach(showBrand));
-
-function showBrand(brand) {
-     let clone = template.cloneNode(true);
-
-       if (brand.gsx$brand.$t == "Canon") {
-        main5.appendChild(clone);
-    }
-
-    if (brand.gsx$brand.$t == "Sony") {
-        main6.appendChild(clone);
-    }
-    if (brand.gsx$brand.$t == "Nikon") {
-        main7.appendChild(clone);
-    }
-    if (brand.gsx$category.$t == "Sigma") {
-        main8.appendChild(clone);
-    }
-}
 
 function showDetails(data) {
     console.log(data);
@@ -114,4 +98,40 @@ function showDetails(data) {
     modal.querySelector(" h3.modal-price").textContent = data.gsx$price.$t;
 
     modal.classList.remove('hide');
-}
+};
+
+
+canon.addEventListener("click", () => {
+    const allNonCanon = document.querySelectorAll("main article:not(.Canon)")
+    allNonCanon.forEach(article=>{
+        article.classList.add("hide");
+    })
+
+});
+
+
+sony.addEventListener("click", () => {
+    const allNonSony = document.querySelectorAll("main article:not(.Sony)")
+    allNonSony.forEach(article=>{
+        article.classList.add("hide");
+    })
+
+});
+
+
+nikon.addEventListener("click", () => {
+    const allNonNikon = document.querySelectorAll("main article:not(.Nikon)")
+    allNonNikon.forEach(article=>{
+        article.classList.add("hide");
+    })
+
+});
+
+
+sigma.addEventListener("click", () => {
+    const allNonSigma = document.querySelectorAll("main article:not(.Sigma)")
+    allNonSigma.forEach(article=>{
+        article.classList.add("hide");
+    })
+
+});
