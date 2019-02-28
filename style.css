@@ -40,11 +40,12 @@ a.down {
 }
 
 
-
 /* images */
 .header {
     width: 100%;
+
 }
+
 
 .small {
     display: block;
@@ -87,13 +88,17 @@ nav#menu {
     font-style: italic;
     text-align: right;
     width: 100%;
+
 }
 
-nav#menu.negativeNav {
+nav#menu.negativeNav  {
     position: fixed;
     top: 0%;
     left: 0%;
     padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: white;
+
 }
 
 a {
@@ -104,7 +109,7 @@ a {
 
 }
 
-nav#menu.negativeNav a {
+nav#menu.negativeNav div.navigation-portrait a {
     color: black;
 }
 
@@ -113,14 +118,18 @@ a:hover {
     transition: 1s;
 }
 
-nav#menu a {
+nav#menu div.navigation-portrait a {
     padding: 2%;
     font-size: 80%;
     width: 100%;
 }
 
-nav#menu a.selected {
+nav#menu div.navigation-portrait a.selected {
     color: #be5429;
+}
+
+.overlay-content a.selected {
+     color: #be5429;
 }
 
 /* NAVIGATION */
@@ -157,7 +166,13 @@ a:hover {
 .navigation {
     padding-top: 10px;
     padding-right: 40px;
+    display: none;
 }
+
+.navigation-portrait {
+    display: none;
+}
+
 
 
 /* OVERLAY MENU */
@@ -178,6 +193,9 @@ a:hover {
     text-align: center;
 }
 
+a.color {
+    color: white;
+}
 .overlay a {
     padding: 9px;
     text-decoration: none;
@@ -199,6 +217,7 @@ a:hover {
     right: 35px;
     font-size: 30px;
     font-style: normal;
+    width: 2%;
 }
 
 .burgermenu {
@@ -213,7 +232,7 @@ a:hover {
     width: 27px;
     float: right;
     padding-right: 25px;
-    display: none;
+    display: block;
     padding-top: 5px;
 }
 
@@ -354,7 +373,7 @@ button.filter:hover {
 
     position: fixed;
     background-color: white;
-    top: 2%;
+    top: 5%;
     padding-left: 4%;
     padding-top: 5%;
     padding-bottom: 1%;
@@ -559,7 +578,6 @@ footer {
     grid-area: copyright;
 }
 
-
 /* media query */
 
 
@@ -592,6 +610,7 @@ footer {
     .navigation-portrait {
         display: none;
     }
+
 }
 
 @media (min-width: 600px) {
@@ -648,6 +667,9 @@ footer {
 .follow {
     grid-area: follow;
 }
+      .filter-content {
+        top: 3%;
+    }
 }
 
 @media (min-width: 800px) {
@@ -681,5 +703,11 @@ footer {
     .navigation-portrait {
         display: block;
     }
+
 }
 
+@media (min-width: 1100px) {
+     .filter-content {
+        top: 2%;
+    }
+}

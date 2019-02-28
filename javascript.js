@@ -1,6 +1,3 @@
-
-
-
 const template = document.querySelector("template").content;
 let main1 = document.querySelector("main#portrait");
 
@@ -19,30 +16,49 @@ const closeModal = document.querySelector(".modal-button");
 const closeFilter = document.querySelector(".filter-button");
 const filterButton = document.querySelector("button.filter");
 
+const article = document.querySelector("article");
+const canon = document.querySelector("a.canon");
+const sony = document.querySelector("a.sony");
+const nikon = document.querySelector("a.nikon");
+const sigma = document.querySelector("a.sigma");
+
+//hides element after click
+
 closeModal.addEventListener("click", () => modal.classList.add("hide"));
 
 closeFilter.addEventListener("click", () => filter.classList.add("hide"));
 
 fetch(productlistLink).then(e => e.json()).then(data => data.feed.entry.forEach(showProduct));
 
+
+//shows element after click
 filterButton.addEventListener("click", () => filter.classList.remove("hide"));
 
 // Open and Close Burger menu //
 function openNav() {
-  document.getElementById("myNav").style.width = "100%";
+    document.getElementById("myNav").style.width = "100%";
+    filterButton.style.zIndex=0
 }
 
 function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
+    document.getElementById("myNav").style.width = "0%";
+    setTimeout(()=>{
+        filterButton.style.zIndex=1
+    }, 500)
+
 }
 
+//shows datas from spreadsheet in template
 
 function showProduct(product) {
     console.log(product)
     let clone = template.cloneNode(true);
 
+
     clone.querySelector("h2.name").textContent = product.gsx$name.$t;
     clone.querySelector("h3.brand").textContent = product.gsx$brand.$t;
+    clone.querySelector("article").classList.add(product.gsx$brand.$t);
+
     clone.querySelector("h3.price").textContent = product.gsx$price.$t;
 
     clone.querySelector("p.lensType").textContent = product.gsx$lenstype.$t;
@@ -52,7 +68,6 @@ function showProduct(product) {
     clone.querySelector("button").addEventListener("click", () => {
         showDetails(product)
     });
-
 
 
     if (product.gsx$category.$t == "portrait") {
@@ -68,8 +83,10 @@ function showProduct(product) {
         main4.appendChild(clone);
     }
 
+
 };
 
+// shows details of the products
 
 function showDetails(data) {
     console.log(data);
@@ -84,4 +101,40 @@ function showDetails(data) {
     modal.querySelector(" h3.modal-price").textContent = data.gsx$price.$t;
 
     modal.classList.remove('hide');
-}
+};
+
+// shows only selected brand
+canon.addEventListener("click", () => {
+    const allNonCanon = document.querySelectorAll("main article:not(.Canon)")
+    allNonCanon.forEach(article=>{
+        article.classList.add("hide");
+    })
+
+});
+
+
+sony.addEventListener("click", () => {
+    const allNonSony = document.querySelectorAll("main article:not(.Sony)")
+    allNonSony.forEach(article=>{
+        article.classList.add("hide");
+    })
+
+});
+
+
+nikon.addEventListener("click", () => {
+    const allNonNikon = document.querySelectorAll("main article:not(.Nikon)")
+    allNonNikon.forEach(article=>{
+        article.classList.add("hide");
+    })
+
+});
+
+
+sigma.addEventListener("click", () => {
+    const allNonSigma = document.querySelectorAll("main article:not(.Sigma)")
+    allNonSigma.forEach(article=>{
+        article.classList.add("hide");
+    })
+
+});

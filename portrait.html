@@ -9,6 +9,7 @@
     <title>portrait lenses</title>
     <!-- Link to Popins font family-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,600,700,700i" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
 
 </head>
 <header>
@@ -23,44 +24,42 @@
         <!-- Logo with a link to the home page -->
         <a href="index.html"><img class="logo negative" src="black-logo1.png" alt="logo"></a>
 
-            <!-- Burger Menu -->
-            <img src="burger-menu-black.png" class="burgermenu-portrait" alt="logo" onclick="openNav()">
+        <!-- Burger Menu -->
+        <img src="burger-menu-black.png" class="burgermenu-portrait" alt="logo" onclick="openNav()">
 
-            <!-- Overlay -->
-            <div id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- Overlay -->
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-                 <div class="overlay-content">
-                    <a href="portrait.html">PORTRAIT</a>
-                    <a href="macro.html">MACRO</a>
-                    <a href="wild-life.html">WILD LIFE</a>
-                    <a href="landscape.html">LANDSCAPE</a>
-                 </div>
+            <div class="overlay-content">
+                <a class="color selected" href="portrait.html">PORTRAIT</a>
+                <a class="color" href="macro.html">MACRO</a>
+                <a href="wild-life.html">WILD LIFE</a>
+                <a href="landscape.html">LANDSCAPE</a>
             </div>
+        </div>
     </nav>
 
     <button class="filter">BRAND</button>
 
     <div class="hide filter-content">
         <button class="filter-button">✕</button>
-        <a href="#canon">Canon</a>
-        <a href="#sony">Sony</a>
-        <a href="#nikon">Nikon</a>
-        <a href="#sigma">Sigma</a>
+        <a class="canon">Canon</a>
+        <a class="sony">Sony</a>
+        <a class="nikon">Nikon</a>
+        <a class="sigma">Sigma</a>
     </div>
 </header>
 
 <body>
 
 
-    <main id="portrait"></main>
+    <main id="portrait">
+    </main>
     <main class="hideMain" id="macro"></main>
     <main class="hideMain" id="wildLife"></main>
     <main class="hideMain" id="landscape"></main>
-    <main id="canon"></main>
-    <main id="sony"></main>
-    <main id="nikon"></main>
-    <main id="sigma"></main>
+
 
     <template>
         <article>
